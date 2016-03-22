@@ -19,9 +19,9 @@ variable "aws_amis" {
     }
 }
 
-resource "template_file" "user_data_template" {
-  count = "${var.count}"
-  template = "${file("user_data_template.tpl")}"
+resource "template_file" "web_init" {
+  count    = "${var.count}"
+  template = "${file("web_init.tpl")}"
   vars {
     hostname = "${lookup(var.hostnames, count.index)}"
   }
@@ -33,7 +33,7 @@ resource "aws_instance" "app" {
     key_name= "${var.key_name}"
     subnet_id= "${var.subnet_id}"
     count = "${var.count}"
-    user_data = "${element(template_file.user_data_template.*.rendered, count.index)}"
+    user_data = "${element(template_file.web_init.*.rendered, count.index)}"
 
 	tags {
       Name = "${format("${var.instance_name}%03d", count.index + 1)}"
