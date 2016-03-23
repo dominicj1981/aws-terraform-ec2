@@ -1,0 +1,1 @@
+This TerraForm Script will spin up EC2 resources into an existing VPC, associate an Elastic IP to each resource, set the hostname and create a Route53 DNS entry for for the Elastic IP based on your hostname variables.
