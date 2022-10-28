@@ -1,7 +1,6 @@
 variable "count" {
   type = "string"
   description = "How many EC2 instances to deploy"
-
 }
 
 variable "instance_name" {
