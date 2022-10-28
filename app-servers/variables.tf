@@ -33,12 +33,3 @@ variable "subnet_id" {
 }
 
 
-variable "aws_access_key" {
-    type = "string"
-    decscription = "Access key"
-}
-
-variable "aws_secret_key" {
-    type = "string"
-    description = "Secret Key"
-}
