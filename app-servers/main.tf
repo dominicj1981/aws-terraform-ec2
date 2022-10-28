@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "mydev-tf-state-bucket-jerry"
+    key = "ec2main"
+    region = "us-east-2"
+    dynamodb_table = "my-dynamodb-table"
+  }
+}
 provider "aws" {
   region = var.aws_region
 }
