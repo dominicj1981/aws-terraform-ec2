@@ -18,7 +18,7 @@ variable "aws_amis" {
     }
 }
 
-resource "template_file" "web_init" {
+data "template_file" "web_init" {
   count    = "${var.count}"
   template = "${file("web_init.tpl")}"
   vars {
