@@ -13,6 +13,7 @@ variable "hostnames" {
 variable "aws_amis" {
   type = "map"
     default = {
+	us-east-1= "ami-08c40ec9ead489470"
         eu-west-1= "ami-f0e7d19a"
     }
 }
